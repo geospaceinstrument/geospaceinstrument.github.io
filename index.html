@@ -5,132 +5,366 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Geospace Instrument Services</title>
   <meta name="description" content="Geospace Instrument Services – Professional survey & GNSS solutions provider." />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    :root { --brand:#0a4ea1; --brand-2:#0f2f5f; --bg:#0b1b34; --text:#1f2937; --muted:#6b7280; --card:#ffffff; --chip:#eef2ff; --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.08); }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#f6f8fb}
-    .container{max-width:1200px;margin:0 auto;padding:2rem}
-    header.hero{background:linear-gradient(135deg,var(--brand),var(--bg));color:#fff;padding:4rem 1.5rem;text-align:center}
-    header.hero h1{font-size:clamp(1.8rem,3.5vw,3rem);margin:0 0 .5rem}
-    header.hero p{margin:.5rem 0 0;opacity:.95}
-    .nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e5e7eb}
-    .nav .container{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:1rem}
-    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem;display:flex;flex-direction:column}
-    .card h3{margin:.25rem 0;color:var(--brand-2)}
-    .specs{margin:.5rem 0 0;padding:0;list-style:none}
-    .specs li{margin:.25rem 0}
-    .cta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto}
-    .btn{appearance:none;border:none;border-radius:12px;padding:.7rem 1rem;cursor:pointer;font-weight:700}
-    .btn.primary{background:var(--brand);color:#fff}
-    .btn.ghost{background:transparent;border:1px solid #d1d5db;color:var(--brand-2)}
-    .section{padding:2rem 1rem}
-    .muted{color:var(--muted)}
-    footer{padding:2rem 1rem;background:#0b1222;color:#c7d2fe;text-align:center}
-    .wa-button{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff !important;padding:.9rem 1.4rem;border-radius:12px;text-decoration:none;font-weight:700;font-size:1.1rem;box-shadow:0 8px 18px rgba(37,211,102,.35)}
-    .wa-icon{width:22px;height:22px;display:inline-block;background:currentColor;mask:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path fill=\"%23fff\" d=\"M19.11 17.12c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.67.14-.2.29-.77.94-.95 1.13-.17.19-.35.22-.64.08-.29-.14-1.24-.46-2.36-1.46-.87-.78-1.45-1.74-1.62-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.48.1-.19.05-.35-.02-.5-.08-.14-.67-1.62-.92-2.22-.24-.58-.5-.5-.67-.5h-.57c-.19 0-.5.07-.76.35s-1 1-1 2.43 1.02 2.82 1.16 3.01c.14.19 2 3.05 4.85 4.28.68.29 1.22.46 1.63.59.68.22 1.3.19 1.79.11.55-.08 1.72-.7 1.96-1.38.24-.67.24-1.25.17-1.37-.06-.11-.24-.18-.53-.32zM26.88 5.12C24.1 2.34 20.41.89 16.63.89 8.5.89 1.94 7.45 1.94 15.57c0 2.63.69 5.2 2.02 7.46L2 30l7.15-1.87c2.19 1.2 4.66 1.84 7.18 1.84h.01c8.13 0 14.68-6.56 14.68-14.68 0-3.78-1.45-7.47-4.22-10.25zm-10.25 23.7h-.01c-2.33 0-4.62-.62-6.61-1.79l-.47-.28-4.24 1.11 1.13-4.13-.3-.49c-1.23-2.01-1.88-4.32-1.88-6.68 0-7.14 5.81-12.95 12.96-12.95 3.46 0 6.71 1.35 9.15 3.79 2.44 2.45 3.79 5.7 3.79 9.16 0 7.14-5.81 12.95-12.95 12.95z\"/></svg>') center/contain no-repeat}
-    .brands-logos{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;margin-top:.5rem}
-    .brand-logo{height:50px;object-fit:contain;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:6px}
-    .contact-card{text-align:center;max-width:560px;margin:0 auto;gap:1rem;display:flex;flex-direction:column;align-items:center}
-    .phone{font-size:1.2rem;margin-top:.5rem}
+    :root { --brand:#c60000; --brand-dark:#7a0000; }
+    body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background:#fff; color:#333; }
+    .navbar { background:#fff; border-bottom:2px solid var(--brand); }
+    .navbar-brand img { height:50px; margin-right:10px; border-radius:6px; }
+    .navbar-nav .nav-link { font-weight:600; color:var(--brand); }
+    .navbar-nav .nav-link:hover { color:var(--brand-dark); }
+    header.hero { background:linear-gradient(135deg,var(--brand),var(--brand-dark)); color:#fff; padding:4rem 1rem; text-align:center; }
+    header.hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:700; }
+    .section { padding:3rem 1rem; }
+    .card { border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+    .card h5 { color:var(--brand-dark); }
+    .brands img { max-height:60px; margin:10px; background:#fff; border:1px solid #ddd; padding:6px; border-radius:8px; }
+    footer { background:var(--brand-dark); color:#eee; text-align:center; padding:2rem 1rem; }
+    .wa-btn { display:inline-flex; align-items:center; gap:.5rem; background:#25D366; color:#fff; padding:.8rem 1.2rem; border-radius:10px; font-weight:600; text-decoration:none; }
+    .wa-btn:hover { background:#1ebe5d; color:#fff; }
+    .social a { color:#fff; font-size:1.5rem; margin:0 .5rem; }
+    .social a:hover { color:#ddd; }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Geospace Instrument Services</h1>
-      <p>Delivering precision survey instruments & GNSS solutions worldwide.</p>
-    </div>
-  </header>
 
-  <nav class="nav">
-    <div class="container">
-      <div style="font-weight:800;color:var(--brand-2)">Geospace</div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#brands">Brands</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>Geospace Instrument Services is a trusted provider of GNSS handhelds, receivers, and survey instruments. Our mission is to empower professionals in surveying, construction, agriculture, and GIS with reliable and accurate solutions.</p>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="section">
-    <div class="container">
-      <h2>Our Products</h2>
-      <p class="muted">We offer a complete range of ComNav GNSS solutions including:</p>
-      <ul>
-        <li>N2 Palm GNSS Receiver</li>
-        <li>Jupiter Laser RTK Receiver</li>
-        <li>R60 Android Data Collector</li>
-        <li>Handheld Series (P8H, P8, P6H, P6)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2>Services</h2>
-      <div class="grid">
-        <div class="card"><h3>Total Station / Theodolite / Auto Level</h3><p class="muted">Sales, calibration, tripod & prism setup, accuracy checks, and user training.</p></div>
-        <div class="card"><h3>RTK GNSS System & Static Processing</h3><p class="muted">Network/base‑rover design, rover onboarding, static session planning, Rinex export and baseline processing.</p></div>
-        <div class="card"><h3>Drone / UAV</h3><p class="muted">Mapping workflows, PPK/RTK setups, ground control, flight planning and data QC.</p></div>
-        <div class="card"><h3>GPR / EML</h3><p class="muted">Ground Penetrating Radar & Electromagnetic Locating — survey planning, data capture and interpretation support.</p></div>
-        <div class="card"><h3>SLAM / Laser Scanner</h3><p class="muted">Indoor/outdoor SLAM mapping, registration workflows and deliverables generation.</p></div>
-        <div class="card"><h3>Echo Sounder / Hydrography</h3><p class="muted">Single‑beam setups, tidal corrections, patch tests and bathymetric processing.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Brands Section -->
-  <section id="brands" class="section">
-    <div class="container">
-      <h2>Brands We Carry</h2>
-      <div class="brands-logos">
-        <img src="/logos/nikon.png" alt="Nikon logo" class="brand-logo"/>
-        <img src="/logos/topcon.png" alt="Topcon logo" class="brand-logo"/>
-        <img src="/logos/sinognss.png" alt="SinoGNSS logo" class="brand-logo"/>
-        <img src="/logos/dji.png" alt="DJI logo" class="brand-logo"/>
-        <img src="/logos/fstar.png" alt="Fstar logo" class="brand-logo"/>
-        <img src="/logos/greenvalley.png" alt="GreenValley logo" class="brand-logo"/>
-        <img src="/logos/impulseradar.png" alt="ImpulseRadar logo" class="brand-logo"/>
-      </div>
-    </div>
-  </section>
-
-<!-- Contact Section -->
-<section id="contact" class="section">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
-    <h2 style="text-align:center">Contact</h2>
-    <p class="muted" style="text-align:center">Reach us directly on WhatsApp or by phone.</p>
-    <div class="card contact-card">
-      <a class="wa-button" href="https://wa.me/60166966810" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <span class="wa-icon" aria-hidden="true"></span>
-        <span>WhatsApp us</span>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://iili.io/Fmblyxe.jpg" alt="Geospace Logo">
+      <span class="fw-bold text-danger">Geospace</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#brands">Brands</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://www.facebook.com/profile.php?id=61574711251197" target="_blank" class="ms-3" aria-label="Facebook">
+        <i class="bi bi-facebook text-danger fs-4"></i>
       </a>
-      <div class="phone">Phone: <strong>016-696 6810</strong></div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <h1>Geospace Instrument Services</h1>
+    <p>Delivering precision survey instruments & GNSS solutions worldwide.</p>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="text-danger fw-bold mb-3">About Us</h2>
+    <p>Geospace Instrument Services is a trusted provider of GNSS handhelds, receivers, and survey instruments. Our mission is to empower professionals in surveying, construction, agriculture, and GIS with reliable and accurate solutions.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS (TABS) -->
+<section id="products" class="section bg-light">
+  <div class="container">
+    <h2 class="text-danger fw-bold mb-4">Our Products</h2>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs justify-content-center mb-4" id="productTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab">All</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="gnss-tab" data-bs-toggle="tab" data-bs-target="#tab-gnss" type="button" role="tab">GNSS Receiver</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="handheld-tab" data-bs-toggle="tab" data-bs-target="#tab-handheld" type="button" role="tab">Handheld GNSS</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="productTabsContent">
+
+      <!-- TAB: ALL -->
+      <div class="tab-pane fade show active" id="tab-all" role="tabpanel" aria-labelledby="all-tab">
+        <div class="row g-4">
+          <!-- N2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbMvwB.png" class="card-img-top" alt="N2 Palm GNSS Receiver">
+              <div class="card-body">
+                <h5 class="card-title">N2 Palm GNSS Receiver</h5>
+                <ul class="small">
+                  <li>1590 channels; 50+ satellites</li>
+                  <li>GPS, BDS-2/3, GLONASS, Galileo, QZSS, IRNSS, SBAS</li>
+                  <li>UHF up to 15 km • Tilt 120° (≈2.5 cm)</li>
+                  <li>20+ hrs • 10,000 mAh • IP67</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Jupiter -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbO57e.md.png" class="card-img-top" alt="Jupiter Laser RTK">
+              <div class="card-body">
+                <h5 class="card-title">Jupiter Laser RTK</h5>
+                <ul class="small">
+                  <li>Laser + dual camera stakeout</li>
+                  <li>1668 channels • all constellations</li>
+                  <li>Auto‑IMU tilt 120° • OLED status</li>
+                  <li>Super datalink up to 15 km</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- R60 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbU3rl.md.png" class="card-img-top" alt="R60 Data Collector">
+              <div class="card-body">
+                <h5 class="card-title">R60 Android Data Collector</h5>
+                <ul class="small">
+                  <li>Android 12 • Qualcomm 8‑core</li>
+                  <li>5.5″ FHD sunlight‑readable</li>
+                  <li>9000 mAh • fast charging</li>
+                  <li>4G • Wi‑Fi • BT • NFC • IP67</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- P8H -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbQBp4.md.png" class="card-img-top" alt="P8H Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P8H Handheld</h5>
+                <ul class="small">
+                  <li>8″ sunlight‑readable</li>
+                  <li>Android 12 (GMS)</li>
+                  <li>Integrated GNSS module & antenna</li>
+                  <li>4G LTE • Wi‑Fi • BT 5.1 • IP67</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- P8 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbpLtj.md.png" class="card-img-top" alt="P8 Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P8 Handheld</h5>
+                <ul class="small">
+                  <li>8″ sunlight‑readable</li>
+                  <li>Android 12 (GMS)</li>
+                  <li>Optional high‑precision GNSS</li>
+                  <li>4G LTE • Wi‑Fi • BT 5.1 • IP67</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- P6H -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbtkrX.png" class="card-img-top" alt="P6H Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P6H Handheld</h5>
+                <ul class="small">
+                  <li>6″ sunlight‑readable</li>
+                  <li>Android 11 (GMS)</li>
+                  <li>SinoGNSS K8 board & antenna</li>
+                  <li>RTK‑cm / PPP‑dm • 4G • Wi‑Fi • BT 5.0 • IP67</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- P6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmmqRpV.md.png" class="card-img-top" alt="P6 Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P6 Handheld</h5>
+                <ul class="small">
+                  <li>6″ sunlight‑readable HD</li>
+                  <li>Android 11 (GMS)</li>
+                  <li>4G • Wi‑Fi • BT 5.0</li>
+                  <li>IP67 • 1.2 m drop</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- P300 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/Fmb6H92.md.png" class="card-img-top" alt="P300 GNSS Tablet">
+              <div class="card-body">
+                <h5 class="card-title">P300 GNSS Tablet</h5>
+                <ul class="small">
+                  <li>Built‑in pro GNSS • full constellations</li>
+                  <li>QUANTUM™ III enhanced heading</li>
+                  <li>8″ / 10.1″ HD touchscreen • Android</li>
+                  <li>4G LTE • Wi‑Fi • BT 5.0 • Cameras</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: GNSS RECEIVER -->
+      <div class="tab-pane fade" id="tab-gnss" role="tabpanel" aria-labelledby="gnss-tab">
+        <div class="row g-4">
+          <!-- N2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbMvwB.png" class="card-img-top" alt="N2 Palm GNSS Receiver">
+              <div class="card-body">
+                <h5 class="card-title">N2 Palm GNSS Receiver</h5>
+                <p class="small mb-0">1590 channels • Multi‑constellation • 15 km UHF • 120° tilt • 20+ hrs • IP67.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Jupiter -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbO57e.md.png" class="card-img-top" alt="Jupiter Laser RTK">
+              <div class="card-body">
+                <h5 class="card-title">Jupiter Laser RTK</h5>
+                <p class="small mb-0">Laser + dual camera • 1668 channels • Auto‑IMU 120° • 15 km SNLonglink • OLED display.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: HANDHELD GNSS -->
+      <div class="tab-pane fade" id="tab-handheld" role="tabpanel" aria-labelledby="handheld-tab">
+        <div class="row g-4">
+          <!-- R60 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbU3rl.md.png" class="card-img-top" alt="R60 Data Collector">
+              <div class="card-body">
+                <h5 class="card-title">R60 Android Data Collector</h5>
+                <p class="small mb-0">Android 12 • 5.5″ FHD • QWERTY • 9000 mAh • 4G/Wi‑Fi/BT/NFC • IP67.</p>
+              </div>
+            </div>
+          </div>
+          <!-- P8H -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbQBp4.md.png" class="card-img-top" alt="P8H Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P8H Handheld</h5>
+                <p class="small mb-0">8″ sunlight‑readable • Android 12 (GMS) • Integrated GNSS • 4G/Wi‑Fi/BT 5.1 • IP67.</p>
+              </div>
+            </div>
+          </div>
+          <!-- P8 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbpLtj.md.png" class="card-img-top" alt="P8 Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P8 Handheld</h5>
+                <p class="small mb-0">8″ sunlight‑readable • Android 12 (GMS) • Optional high‑precision GNSS • 4G/Wi‑Fi/BT 5.1 • IP67.</p>
+              </div>
+            </div>
+          </div>
+          <!-- P6H -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmbtkrX.png" class="card-img-top" alt="P6H Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P6H Handheld</h5>
+                <p class="small mb-0">6″ sunlight‑readable • Android 11 (GMS) • SinoGNSS K8 • RTK‑cm/PPP‑dm • 4G/Wi‑Fi/BT 5.0 • IP67.</p>
+              </div>
+            </div>
+          </div>
+          <!-- P6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/FmmqRpV.md.png" class="card-img-top" alt="P6 Handheld">
+              <div class="card-body">
+                <h5 class="card-title">P6 Handheld</h5>
+                <p class="small mb-0">6″ sunlight‑readable HD • Android 11 (GMS) • 4G/Wi‑Fi/BT 5.0 • IP67 • 1.2 m drop.</p>
+              </div>
+            </div>
+          </div>
+          <!-- P300 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 p-3">
+              <img src="https://iili.io/Fmb6H92.md.png" class="card-img-top" alt="P300 GNSS Tablet">
+              <div class="card-body">
+                <h5 class="card-title">P300 GNSS Tablet</h5>
+                <p class="small mb-0">In‑cab rugged tablet • Built‑in pro GNSS • QUANTUM™ III • 8″/10.1″ Android • 4G/Wi‑Fi/BT 5.0 • Cameras.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-
-  <footer>
-    <div class="container">
-      <div>© 2025 Geospace Instrument Services. All rights reserved.</div>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="text-danger fw-bold mb-4">Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="card p-3"><h5>Total Station / Theodolite / Auto Level</h5><p>Sales, calibration, tripod & prism setup, accuracy checks, and user training.</p></div></div>
+      <div class="col-md-4"><div class="card p-3"><h5>RTK GNSS System & Static Processing</h5><p>Network/base-rover design, static session planning, Rinex export & processing.</p></div></div>
+      <div class="col-md-4"><div class="card p-3"><h5>Drone / UAV</h5><p>Mapping workflows, RTK/PPK setups, ground control, flight planning.</p></div></div>
+      <div class="col-md-4"><div class="card p-3"><h5>GPR / EML</h5><p>Ground Penetrating Radar & Electromagnetic Locating support.</p></div></div>
+      <div class="col-md-4"><div class="card p-3"><h5>SLAM / Laser Scanner</h5><p>Indoor/outdoor SLAM mapping, registration workflows.</p></div></div>
+      <div class="col-md-4"><div class="card p-3"><h5>Echo Sounder / Hydrography</h5><p>Single-beam setups, tidal corrections, bathymetric processing.</p></div></div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands" class="section bg-light">
+  <div class="container text-center">
+    <h2 class="text-danger fw-bold mb-4">Brands We Carry</h2>
+    <div class="brands d-flex flex-wrap justify-content-center">
+      <img src="/logos/nikon.png" alt="Nikon">
+      <img src="/logos/topcon.png" alt="Topcon">
+      <img src="/logos/sinognss.png" alt="SinoGNSS">
+      <img src="/logos/dji.png" alt="DJI">
+      <img src="/logos/fstar.png" alt="Fstar">
+      <img src="/logos/greenvalley.png" alt="GreenValley">
+      <img src="/logos/impulseradar.png" alt="ImpulseRadar">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container text-center">
+    <h2 class="text-danger fw-bold mb-3">Contact</h2>
+    <p class="mb-4">Reach us directly on WhatsApp or by phone.</p>
+    <a href="https://wa.me/60166966810" target="_blank" class="wa-btn mb-3"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+    <div class="fw-bold">Phone: 016-696-6810</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2025 Geospace Instrument Services. All rights reserved.</p>
+    <div class="social">
+      <a href="https://www.facebook.com/profile.php?id=61574711251197" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
