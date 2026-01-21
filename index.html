@@ -1,370 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Geospace Instrument Services</title>
-  <meta name="description" content="Geospace Instrument Services – Professional survey & GNSS solutions provider." />
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    :root { --brand:#c60000; --brand-dark:#7a0000; }
-    body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background:#fff; color:#333; }
-    .navbar { background:#fff; border-bottom:2px solid var(--brand); }
-    .navbar-brand img { height:50px; margin-right:10px; border-radius:6px; }
-    .navbar-nav .nav-link { font-weight:600; color:var(--brand); }
-    .navbar-nav .nav-link:hover { color:var(--brand-dark); }
-    header.hero { background:linear-gradient(135deg,var(--brand),var(--brand-dark)); color:#fff; padding:4rem 1rem; text-align:center; }
-    header.hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:700; }
-    .section { padding:3rem 1rem; }
-    .card { border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08); }
-    .card h5 { color:var(--brand-dark); }
-    .brands img { max-height:60px; margin:10px; background:#fff; border:1px solid #ddd; padding:6px; border-radius:8px; }
-    footer { background:var(--brand-dark); color:#eee; text-align:center; padding:2rem 1rem; }
-    .wa-btn { display:inline-flex; align-items:center; gap:.5rem; background:#25D366; color:#fff; padding:.8rem 1.2rem; border-radius:10px; font-weight:600; text-decoration:none; }
-    .wa-btn:hover { background:#1ebe5d; color:#fff; }
-    .social a { color:#fff; font-size:1.5rem; margin:0 .5rem; }
-    .social a:hover { color:#ddd; }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geospace Instrument Services</title>
+    <meta name="description" content="Geospace Instrument Services – Professional survey & GNSS solutions provider." />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      :root {
+        --brand: #c60000;
+        --brand-dark: #7a0000;
+        --brand-soft: #fdecec;
+      }
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="https://iili.io/Fmblyxe.jpg" alt="Geospace Logo">
-      <span class="fw-bold text-danger">Geospace</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#brands">Brands</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-      <a href="https://www.facebook.com/profile.php?id=61574711251197" target="_blank" class="ms-3" aria-label="Facebook">
-        <i class="bi bi-facebook text-danger fs-4"></i>
-      </a>
-    </div>
-  </div>
-</nav>
+      body {
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background: #fff;
+        color: #333;
+        line-height: 1.6;
+      }
 
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <h1>Geospace Instrument Services</h1>
-    <p>Delivering precision survey instruments & GNSS solutions worldwide.</p>
-  </div>
-</header>
+      /* NAVBAR */
+      .navbar {
+        background: #fff;
+        border-bottom: 2px solid var(--brand);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+      }
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2 class="text-danger fw-bold mb-3">About Us</h2>
-    <p>Geospace Instrument Services is a trusted provider of GNSS handhelds, receivers, and survey instruments. Our mission is to empower professionals in surveying, construction, agriculture, and GIS with reliable and accurate solutions.</p>
-  </div>
-</section>
+      /* LOGO SIZE FIX (ADDED) */
+      .navbar-brand img {
+        height: 36px;
+        width: auto;
+        margin-right: 10px;
+        border-radius: 6px;
+      }
 
-<!-- PRODUCTS (TABS) -->
-<section id="products" class="section bg-light">
-  <div class="container">
-    <h2 class="text-danger fw-bold mb-4">Our Products</h2>
+      .navbar-brand span {
+        letter-spacing: .5px;
+      }
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs justify-content-center mb-4" id="productTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab">All</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="gnss-tab" data-bs-toggle="tab" data-bs-target="#tab-gnss" type="button" role="tab">GNSS Receiver</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="handheld-tab" data-bs-toggle="tab" data-bs-target="#tab-handheld" type="button" role="tab">Handheld GNSS</button>
-      </li>
-    </ul>
+      .navbar-nav .nav-link {
+        font-weight: 600;
+        color: var(--brand);
+        position: relative;
+      }
 
-    <div class="tab-content" id="productTabsContent">
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--brand);
+        transition: .3s;
+      }
 
-      <!-- TAB: ALL -->
-      <div class="tab-pane fade show active" id="tab-all" role="tabpanel" aria-labelledby="all-tab">
-        <div class="row g-4">
-          <!-- N2 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbMvwB.png" class="card-img-top" alt="N2 Palm GNSS Receiver">
-              <div class="card-body">
-                <h5 class="card-title">N2 Palm GNSS Receiver</h5>
-                <ul class="small">
-                  <li>1590 channels; 50+ satellites</li>
-                  <li>GPS, BDS-2/3, GLONASS, Galileo, QZSS, IRNSS, SBAS</li>
-                  <li>UHF up to 15 km • Tilt 120° (≈2.5 cm)</li>
-                  <li>20+ hrs • 10,000 mAh • IP67</li>
-                </ul>
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* HERO */
+      header.hero {
+        background:
+          linear-gradient(135deg, rgba(198, 0, 0, .95), rgba(122, 0, 0, .95)),
+          url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=60");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 5rem 1rem;
+        text-align: center;
+        /* centered text */
+      }
+
+      header.hero p {
+        max-width: 700px;
+        margin: 1rem auto 0;
+        opacity: .95;
+      }
+
+      header.hero h1,
+      header.hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* SECTIONS */
+      .section {
+        padding: 4rem 1rem;
+      }
+
+      .section h2 {
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .section h2::after {
+        content: "";
+        width: 60px;
+        height: 4px;
+        background: var(--brand);
+        display: block;
+        margin-top: .5rem;
+        border-radius: 2px;
+      }
+
+      /* CARDS */
+      .card {
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+        transition: transform .3s ease, box-shadow .3s ease;
+        background: #fff;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+      }
+
+      .card img {
+        border-radius: 12px;
+        padding: 10px;
+        background: #f9f9f9;
+      }
+
+      .card h5 {
+        color: var(--brand-dark);
+        font-weight: 700;
+      }
+
+      /* PRODUCT IMAGE NORMALIZATION */
+      .card-img-top {
+        width: 100%;
+        height: 220px;
+        /* same height for all cards */
+        object-fit: contain;
+        /* keep full image, no cropping */
+        background: #f9f9f9;
+      }
+
+      /* TABS */
+      .nav-tabs {
+        border-bottom: none;
+      }
+
+      .nav-tabs .nav-link {
+        border: none;
+        font-weight: 600;
+        color: #555;
+        border-radius: 999px;
+        padding: .5rem 1.2rem;
+      }
+
+      .nav-tabs .nav-link.active {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(198, 0, 0, .4);
+      }
+
+      /* BRANDS */
+      .brands img {
+        max-height: 90px;
+        margin: 12px;
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+        transition: transform .3s;
+      }
+
+      .brands img:hover {
+        transform: scale(1.05);
+      }
+
+      /* WHATSAPP BUTTON */
+      .wa-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .6rem;
+        background: #25D366;
+        color: #fff;
+        padding: .9rem 1.4rem;
+        border-radius: 999px;
+        font-weight: 600;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+        transition: transform .2s ease, box-shadow .2s ease;
+        text-decoration: none;
+      }
+
+      .wa-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, .25);
+        color: #fff;
+      }
+
+      /* FOOTER */
+      footer {
+        background: linear-gradient(135deg, var(--brand-dark), #4a0000);
+        color: #eee;
+        text-align: center;
+        padding: 2.5rem 1rem;
+      }
+
+      footer p {
+        margin-bottom: .5rem;
+        opacity: .9;
+      }
+
+      .social a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0 .5rem;
+        transition: opacity .2s;
+      }
+
+      .social a:hover {
+        opacity: .7;
+      }
+
+      /* MOBILE */
+      @media (max-width: 576px) {
+        header.hero {
+          padding: 4rem 1rem;
+        }
+
+        .card {
+          border-radius: 14px;
+        }
+
+        .navbar-brand img {
+          height: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="https://iili.io/frNQBLu.png" alt="Geospace Logo">
+          <span class="fw-bold text-danger">Geospace</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#brands">Brands</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="https://www.facebook.com/profile.php?id=61574711251197" target="_blank" class="ms-3" aria-label="Facebook">
+            <i class="bi bi-facebook text-danger fs-4"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container">
+        <h1>Geospace Instrument Services</h1>
+        <p>Delivering precision survey instruments & GNSS solutions worldwide.</p>
+      </div>
+    </header>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="text-danger fw-bold mb-3">About Us</h2>
+        <p>Geospace Instrument Services is a trusted provider of GNSS handhelds, receivers, and survey instruments. Our mission is to empower professionals in surveying, construction, agriculture, and GIS with reliable and accurate solutions.</p>
+      </div>
+    </section>
+    <!-- PRODUCTS (TABS) -->
+    <section id="products" class="section bg-light">
+      <div class="container">
+        <h2 class="text-danger fw-bold mb-4">Our Products</h2>
+        <!-- Tabs -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="productTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab">All</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gnss-tab" data-bs-toggle="tab" data-bs-target="#tab-gnss" type="button" role="tab">GNSS Receiver</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="handheld-tab" data-bs-toggle="tab" data-bs-target="#tab-handheld" type="button" role="tab">Handheld GNSS</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="laserscanning-tab" data-bs-toggle="tab" data-bs-target="#tab-laserscanning" type="button" role="tab">Laser Scanning</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="GPR-tab" data-bs-toggle="tab" data-bs-target="#tab-GPR" type="button" role="tab">Ground Penetrating Radar</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="productTabsContent">
+          <!-- TAB: ALL -->
+          <div class="tab-pane fade show active" id="tab-all" role="tabpanel" aria-labelledby="all-tab">
+            <div class="row g-4">
+              <!-- N2 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbMvwB.png" class="card-img-top" alt="N2 Palm GNSS Receiver">
+                  <div class="card-body">
+                    <h5 class="card-title">N2 Palm GNSS Receiver</h5>
+                    <ul class="small">
+                      <li>1590 channels; 50+ satellites</li>
+                      <li>GPS, BDS-2/3, GLONASS, Galileo, QZSS, IRNSS, SBAS</li>
+                      <li>UHF up to 15 km • Tilt 120° (≈2.5 cm)</li>
+                      <li>20+ hrs • 10,000 mAh • IP67</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Jupiter -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbO57e.md.png" class="card-img-top" alt="Jupiter Laser RTK">
+                  <div class="card-body">
+                    <h5 class="card-title">Jupiter Laser RTK</h5>
+                    <ul class="small">
+                      <li>Laser + dual camera stakeout</li>
+                      <li>1668 channels • all constellations</li>
+                      <li>Auto‑IMU tilt 120° • OLED status</li>
+                      <li>Super datalink up to 15 km</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- R60 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbU3rl.md.png" class="card-img-top" alt="R60 Data Collector">
+                  <div class="card-body">
+                    <h5 class="card-title">R60 Android Data Collector</h5>
+                    <ul class="small">
+                      <li>Android 12 • Qualcomm 8‑core</li>
+                      <li>5.5″ FHD sunlight‑readable</li>
+                      <li>9000 mAh • fast charging</li>
+                      <li>4G • Wi‑Fi • BT • NFC • IP67</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- P8H -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbQBp4.md.png" class="card-img-top" alt="P8H Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P8H Handheld</h5>
+                    <ul class="small">
+                      <li>8″ sunlight‑readable</li>
+                      <li>Android 12 (GMS)</li>
+                      <li>Integrated GNSS module & antenna</li>
+                      <li>4G LTE • Wi‑Fi • BT 5.1 • IP67</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- P8 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbpLtj.md.png" class="card-img-top" alt="P8 Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P8 Handheld</h5>
+                    <ul class="small">
+                      <li>8″ sunlight‑readable</li>
+                      <li>Android 12 (GMS)</li>
+                      <li>Optional high‑precision GNSS</li>
+                      <li>4G LTE • Wi‑Fi • BT 5.1 • IP67</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- P6H -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbtkrX.png" class="card-img-top" alt="P6H Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P6H Handheld</h5>
+                    <ul class="small">
+                      <li>6″ sunlight‑readable</li>
+                      <li>Android 11 (GMS)</li>
+                      <li>SinoGNSS K8 board & antenna</li>
+                      <li>RTK‑cm / PPP‑dm • 4G • Wi‑Fi • BT 5.0 • IP67</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- P6 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmmqRpV.md.png" class="card-img-top" alt="P6 Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P6 Handheld</h5>
+                    <ul class="small">
+                      <li>6″ sunlight‑readable HD</li>
+                      <li>Android 11 (GMS)</li>
+                      <li>4G • Wi‑Fi • BT 5.0</li>
+                      <li>IP67 • 1.2 m drop</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- P300 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/Fmb6H92.md.png" class="card-img-top" alt="P300 GNSS Tablet">
+                  <div class="card-body">
+                    <h5 class="card-title">P300 GNSS Tablet</h5>
+                    <ul class="small">
+                      <li>Built‑in pro GNSS • full constellations</li>
+                      <li>QUANTUM™ III enhanced heading</li>
+                      <li>8″ / 10.1″ HD touchscreen • Android</li>
+                      <li>4G LTE • Wi‑Fi • BT 5.0 • Cameras</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- LiAirH600 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frO1pRt.webp" class="card-img-top" alt="LiAir H600">
+                  <div class="card-body">
+                    <h5 class="card-title">LiAir H600</h5>
+                    <p class="small mb-0">Medium-range LiDAR • 1.3 kg • 750 m range • 550 kHz scan • ±5 cm accuracy • 26 MP camera • IP64 • DJI compatible</p>
+                  </div>
+                </div>
+              </div>
+              <!--LiAirH800-->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frOE9bn.png" class="card-img-top" alt="LiAir H800">
+                  <div class="card-body">
+                    <h5 class="card-title">LiAir H800</h5>
+                    <p class="small mb-0">Medium-to-long-range LiDAR • 2.25 kg • up to 1000 m range • ±5 cm vertical accuracy • 100–2000 kHz scan • 26 MP camera • GNSS/IMU • Wi-Fi.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- LiGripO2Lite -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frO1mJI.webp" class="card-img-top" alt="LiGrip O2 Lite">
+                  <div class="card-body">
+                    <h5 class="card-title">LiGrip O2 Lite</h5>
+                    <p class="small mb-0"> &lt;3 cm accuracy • 1.3 kg • 360° LiDAR • 70 m range • 200k pts/s • 4 cameras • 512 GB SSD • IP64. </p>
+                  </div>
+                </div>
+              </div>
+              <!-- PinPointR -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frkGgne.jpg" class="card-img-top" alt="PinPointR">
+                  <div class="card-body">
+                    <h5 class="card-title">PinPointR GPR Utility Locator</h5>
+                    <p class="small mb-0">Dual‑channel GPR • 400/800 MHz • RTS real‑time sampling • >800 scans/sec • 130 km/h survey speed • Internal DGPS + external GPS support • Android UI • 7 hr battery • IP65 • 6.35 kg (antenna) • Cart system ~20 kg • CE/FCC/IC approved</p>
+                  </div>
+                </div>
+              </div>
+              <!--Raptor-->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frkGSt9.jpg" class="card-img-top" alt="LiAir H800">
+                  <div class="card-body">
+                    <h5 class="card-title">Raptor 3D GPR Array</h5>
+                    <p class="small mb-0">High‑speed 3D GPR array • Real‑Time Sampling (RTS) technology • 450 MHz & 800 MHz antenna options • Survey speeds >130 km/h @ 5 cm interval • Multi‑channel modular array • Vehicle or cart mount • 60 cm scan width • IP65 rugged • Condor/Talon software support • ideal for utility mapping, infrastructure, archaeology, road/bridge inspection.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CrossOver Series -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frkGicx.jpg" class="card-img-top" alt="LiGrip O2 Lite">
+                  <div class="card-body">
+                    <h5 class="card-title">CrossOver Series GPR</h5>
+                    <p class="small mb-0">General‑purpose dual‑channel GPR • real‑time sampling (RTS) • available in 70/300, 170/600 & 400/800 MHz dual‑frequency antennas • integrated GPS • Android control • wireless data link • >800 scans/sec • >130 km/h survey speed • 7 hr battery • IP65 rugged • access carts & pulling kits • ideal for infrastructure, geological, archaeology, environmental & utility surveys.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Jupiter -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbO57e.md.png" class="card-img-top" alt="Jupiter Laser RTK">
-              <div class="card-body">
-                <h5 class="card-title">Jupiter Laser RTK</h5>
-                <ul class="small">
-                  <li>Laser + dual camera stakeout</li>
-                  <li>1668 channels • all constellations</li>
-                  <li>Auto‑IMU tilt 120° • OLED status</li>
-                  <li>Super datalink up to 15 km</li>
-                </ul>
+          <!-- TAB: GNSS RECEIVER -->
+          <div class="tab-pane fade" id="tab-gnss" role="tabpanel" aria-labelledby="gnss-tab">
+            <div class="row g-4">
+              <!-- N2 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbMvwB.png" class="card-img-top" alt="N2 Palm GNSS Receiver">
+                  <div class="card-body">
+                    <h5 class="card-title">N2 Palm GNSS Receiver</h5>
+                    <p class="small mb-0">1590 channels • Multi‑constellation • 15 km UHF • 120° tilt • 20+ hrs • IP67.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Jupiter -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbO57e.md.png" class="card-img-top" alt="Jupiter Laser RTK">
+                  <div class="card-body">
+                    <h5 class="card-title">Jupiter Laser RTK</h5>
+                    <p class="small mb-0">Laser + dual camera • 1668 channels • Auto‑IMU 120° • 15 km SNLonglink • OLED display.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- R60 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbU3rl.md.png" class="card-img-top" alt="R60 Data Collector">
-              <div class="card-body">
-                <h5 class="card-title">R60 Android Data Collector</h5>
-                <ul class="small">
-                  <li>Android 12 • Qualcomm 8‑core</li>
-                  <li>5.5″ FHD sunlight‑readable</li>
-                  <li>9000 mAh • fast charging</li>
-                  <li>4G • Wi‑Fi • BT • NFC • IP67</li>
-                </ul>
+          <!-- TAB: HANDHELD GNSS -->
+          <div class="tab-pane fade" id="tab-handheld" role="tabpanel" aria-labelledby="handheld-tab">
+            <div class="row g-4">
+              <!-- R60 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbU3rl.md.png" class="card-img-top" alt="R60 Data Collector">
+                  <div class="card-body">
+                    <h5 class="card-title">R60 Android Data Collector</h5>
+                    <p class="small mb-0">Android 12 • 5.5″ FHD • QWERTY • 9000 mAh • 4G/Wi‑Fi/BT/NFC • IP67.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- P8H -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbQBp4.md.png" class="card-img-top" alt="P8H Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P8H Handheld</h5>
+                    <p class="small mb-0">8″ sunlight‑readable • Android 12 (GMS) • Integrated GNSS • 4G/Wi‑Fi/BT 5.1 • IP67.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- P8 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbpLtj.md.png" class="card-img-top" alt="P8 Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P8 Handheld</h5>
+                    <p class="small mb-0">8″ sunlight‑readable • Android 12 (GMS) • Optional high‑precision GNSS • 4G/Wi‑Fi/BT 5.1 • IP67.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- P6H -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmbtkrX.png" class="card-img-top" alt="P6H Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P6H Handheld</h5>
+                    <p class="small mb-0">6″ sunlight‑readable • Android 11 (GMS) • SinoGNSS K8 • RTK‑cm/PPP‑dm • 4G/Wi‑Fi/BT 5.0 • IP67.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- P6 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/FmmqRpV.md.png" class="card-img-top" alt="P6 Handheld">
+                  <div class="card-body">
+                    <h5 class="card-title">P6 Handheld</h5>
+                    <p class="small mb-0">6″ sunlight‑readable HD • Android 11 (GMS) • 4G/Wi‑Fi/BT 5.0 • IP67 • 1.2 m drop.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- P300 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/Fmb6H92.md.png" class="card-img-top" alt="P300 GNSS Tablet">
+                  <div class="card-body">
+                    <h5 class="card-title">P300 GNSS Tablet</h5>
+                    <p class="small mb-0">In‑cab rugged tablet • Built‑in pro GNSS • QUANTUM™ III • 8″/10.1″ Android • 4G/Wi‑Fi/BT 5.0 • Cameras.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- P8H -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbQBp4.md.png" class="card-img-top" alt="P8H Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P8H Handheld</h5>
-                <ul class="small">
-                  <li>8″ sunlight‑readable</li>
-                  <li>Android 12 (GMS)</li>
-                  <li>Integrated GNSS module & antenna</li>
-                  <li>4G LTE • Wi‑Fi • BT 5.1 • IP67</li>
-                </ul>
+          <!-- TAB: Laser Scanning -->
+          <div class="tab-pane fade" id="tab-laserscanning" role="tabpanel" aria-labelledby="laserscanning-tab">
+            <div class="row g-4">
+              <!-- LiAirH600 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frO1pRt.webp" class="card-img-top" alt="LiAir H600">
+                  <div class="card-body">
+                    <h5 class="card-title">LiAir H600</h5>
+                    <p class="small mb-0">Medium-range LiDAR • 1.3 kg • 750 m range • 550 kHz scan • ±5 cm accuracy • 26 MP camera • IP64 • DJI compatible</p>
+                  </div>
+                </div>
+              </div>
+              <!--LiAirH800-->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frOE9bn.png" class="card-img-top" alt="LiAir H800">
+                  <div class="card-body">
+                    <h5 class="card-title">LiAir H800</h5>
+                    <p class="small mb-0">Medium-to-long-range LiDAR • 2.25 kg • up to 1000 m range • ±5 cm vertical accuracy • 100–2000 kHz scan • 26 MP camera • GNSS/IMU • Wi-Fi.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- LiGripO2Lite -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frO1mJI.webp" class="card-img-top" alt="LiGrip O2 Lite">
+                  <div class="card-body">
+                    <h5 class="card-title">LiGrip O2 Lite</h5>
+                    <p class="small mb-0"> &lt;3 cm accuracy • 1.3 kg • 360° LiDAR • 70 m range • 200k pts/s • 4 cameras • 512 GB SSD • IP64. </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- P8 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbpLtj.md.png" class="card-img-top" alt="P8 Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P8 Handheld</h5>
-                <ul class="small">
-                  <li>8″ sunlight‑readable</li>
-                  <li>Android 12 (GMS)</li>
-                  <li>Optional high‑precision GNSS</li>
-                  <li>4G LTE • Wi‑Fi • BT 5.1 • IP67</li>
-                </ul>
+          <!-- TAB: Ground Penetrating Radar -->
+          <div class="tab-pane fade" id="tab-GPR" role="tabpanel" aria-labelledby="GPR-tab">
+            <div class="row g-4">
+              <!-- PinPointR -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frkGgne.jpg" class="card-img-top" alt="PinPointR">
+                  <div class="card-body">
+                    <h5 class="card-title">PinPointR GPR Utility Locator</h5>
+                    <p class="small mb-0">Dual‑channel GPR • 400/800 MHz • RTS real‑time sampling • >800 scans/sec • 130 km/h survey speed • Internal DGPS + external GPS support • Android UI • 7 hr battery • IP65 • 6.35 kg (antenna) • Cart system ~20 kg • CE/FCC/IC approved</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- P6H -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbtkrX.png" class="card-img-top" alt="P6H Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P6H Handheld</h5>
-                <ul class="small">
-                  <li>6″ sunlight‑readable</li>
-                  <li>Android 11 (GMS)</li>
-                  <li>SinoGNSS K8 board & antenna</li>
-                  <li>RTK‑cm / PPP‑dm • 4G • Wi‑Fi • BT 5.0 • IP67</li>
-                </ul>
+              <!--Raptor-->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frkGSt9.jpg" class="card-img-top" alt="LiAir H800">
+                  <div class="card-body">
+                    <h5 class="card-title">Raptor 3D GPR Array</h5>
+                    <p class="small mb-0">High‑speed 3D GPR array • Real‑Time Sampling (RTS) technology • 450 MHz & 800 MHz antenna options • Survey speeds >130 km/h @ 5 cm interval • Multi‑channel modular array • Vehicle or cart mount • 60 cm scan width • IP65 rugged • Condor/Talon software support • ideal for utility mapping, infrastructure, archaeology, road/bridge inspection.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- P6 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmmqRpV.md.png" class="card-img-top" alt="P6 Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P6 Handheld</h5>
-                <ul class="small">
-                  <li>6″ sunlight‑readable HD</li>
-                  <li>Android 11 (GMS)</li>
-                  <li>4G • Wi‑Fi • BT 5.0</li>
-                  <li>IP67 • 1.2 m drop</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- P300 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/Fmb6H92.md.png" class="card-img-top" alt="P300 GNSS Tablet">
-              <div class="card-body">
-                <h5 class="card-title">P300 GNSS Tablet</h5>
-                <ul class="small">
-                  <li>Built‑in pro GNSS • full constellations</li>
-                  <li>QUANTUM™ III enhanced heading</li>
-                  <li>8″ / 10.1″ HD touchscreen • Android</li>
-                  <li>4G LTE • Wi‑Fi • BT 5.0 • Cameras</li>
-                </ul>
+              <!-- CrossOver Series -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 p-3">
+                  <img src="https://iili.io/frkGicx.jpg" class="card-img-top" alt="LiGrip O2 Lite">
+                  <div class="card-body">
+                    <h5 class="card-title">CrossOver Series GPR</h5>
+                    <p class="small mb-0">General‑purpose dual‑channel GPR • real‑time sampling (RTS) • available in 70/300, 170/600 & 400/800 MHz dual‑frequency antennas • integrated GPS • Android control • wireless data link • >800 scans/sec • >130 km/h survey speed • 7 hr battery • IP65 rugged • access carts & pulling kits • ideal for infrastructure, geological, archaeology, environmental & utility surveys.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- TAB: GNSS RECEIVER -->
-      <div class="tab-pane fade" id="tab-gnss" role="tabpanel" aria-labelledby="gnss-tab">
+    </section>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="text-danger fw-bold mb-4">Services</h2>
         <div class="row g-4">
-          <!-- N2 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbMvwB.png" class="card-img-top" alt="N2 Palm GNSS Receiver">
-              <div class="card-body">
-                <h5 class="card-title">N2 Palm GNSS Receiver</h5>
-                <p class="small mb-0">1590 channels • Multi‑constellation • 15 km UHF • 120° tilt • 20+ hrs • IP67.</p>
-              </div>
+          <div class="col-md-4">
+            <div class="card p-3">
+              <h5>Total Station / Theodolite / Auto Level</h5>
+              <p>Sales, calibration, tripod & prism setup, accuracy checks, and user training.</p>
             </div>
           </div>
-          <!-- Jupiter -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbO57e.md.png" class="card-img-top" alt="Jupiter Laser RTK">
-              <div class="card-body">
-                <h5 class="card-title">Jupiter Laser RTK</h5>
-                <p class="small mb-0">Laser + dual camera • 1668 channels • Auto‑IMU 120° • 15 km SNLonglink • OLED display.</p>
-              </div>
+          <div class="col-md-4">
+            <div class="card p-3">
+              <h5>RTK GNSS System & Static Processing</h5>
+              <p>Network/base-rover design, static session planning, Rinex export & processing.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-3">
+              <h5>Drone / UAV</h5>
+              <p>Mapping workflows, RTK/PPK setups, ground control, flight planning.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-3">
+              <h5>GPR / EML</h5>
+              <p>Ground Penetrating Radar & Electromagnetic Locating support.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-3">
+              <h5>SLAM / Laser Scanner</h5>
+              <p>Indoor/outdoor SLAM mapping, registration workflows.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-3">
+              <h5>Echo Sounder / Hydrography</h5>
+              <p>Single-beam setups, tidal corrections, bathymetric processing.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- TAB: HANDHELD GNSS -->
-      <div class="tab-pane fade" id="tab-handheld" role="tabpanel" aria-labelledby="handheld-tab">
-        <div class="row g-4">
-          <!-- R60 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbU3rl.md.png" class="card-img-top" alt="R60 Data Collector">
-              <div class="card-body">
-                <h5 class="card-title">R60 Android Data Collector</h5>
-                <p class="small mb-0">Android 12 • 5.5″ FHD • QWERTY • 9000 mAh • 4G/Wi‑Fi/BT/NFC • IP67.</p>
-              </div>
-            </div>
-          </div>
-          <!-- P8H -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbQBp4.md.png" class="card-img-top" alt="P8H Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P8H Handheld</h5>
-                <p class="small mb-0">8″ sunlight‑readable • Android 12 (GMS) • Integrated GNSS • 4G/Wi‑Fi/BT 5.1 • IP67.</p>
-              </div>
-            </div>
-          </div>
-          <!-- P8 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbpLtj.md.png" class="card-img-top" alt="P8 Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P8 Handheld</h5>
-                <p class="small mb-0">8″ sunlight‑readable • Android 12 (GMS) • Optional high‑precision GNSS • 4G/Wi‑Fi/BT 5.1 • IP67.</p>
-              </div>
-            </div>
-          </div>
-          <!-- P6H -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmbtkrX.png" class="card-img-top" alt="P6H Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P6H Handheld</h5>
-                <p class="small mb-0">6″ sunlight‑readable • Android 11 (GMS) • SinoGNSS K8 • RTK‑cm/PPP‑dm • 4G/Wi‑Fi/BT 5.0 • IP67.</p>
-              </div>
-            </div>
-          </div>
-          <!-- P6 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/FmmqRpV.md.png" class="card-img-top" alt="P6 Handheld">
-              <div class="card-body">
-                <h5 class="card-title">P6 Handheld</h5>
-                <p class="small mb-0">6″ sunlight‑readable HD • Android 11 (GMS) • 4G/Wi‑Fi/BT 5.0 • IP67 • 1.2 m drop.</p>
-              </div>
-            </div>
-          </div>
-          <!-- P300 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 p-3">
-              <img src="https://iili.io/Fmb6H92.md.png" class="card-img-top" alt="P300 GNSS Tablet">
-              <div class="card-body">
-                <h5 class="card-title">P300 GNSS Tablet</h5>
-                <p class="small mb-0">In‑cab rugged tablet • Built‑in pro GNSS • QUANTUM™ III • 8″/10.1″ Android • 4G/Wi‑Fi/BT 5.0 • Cameras.</p>
-              </div>
-            </div>
-          </div>
+    </section>
+    <!-- BRANDS -->
+    <section id="brands" class="section bg-light">
+      <div class="container text-center">
+        <h2 class="text-danger fw-bold mb-4">Brands We Carry</h2>
+        <div class="brands d-flex flex-wrap justify-content-center">
+          <img src="https://iili.io/frNfA1p.jpg" alt="Nikon">
+          <img src="https://iili.io/frNf72I.png" alt="Topcon">
+          <img src="https://iili.io/frNfnmg.png" alt="SinoGNSS">
+          <img src="https://iili.io/frNfxIa.png" alt="DJI">
+          <img src="/logos/fstar.png" alt="Fstar">
+          <img src="https://iili.io/frNfCkF.jpg" alt="GreenValley">
+          <img src="https://iili.io/frNfzhJ.jpg" alt="ImpulseRadar">
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-  <div class="container">
-    <h2 class="text-danger fw-bold mb-4">Services</h2>
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card p-3"><h5>Total Station / Theodolite / Auto Level</h5><p>Sales, calibration, tripod & prism setup, accuracy checks, and user training.</p></div></div>
-      <div class="col-md-4"><div class="card p-3"><h5>RTK GNSS System & Static Processing</h5><p>Network/base-rover design, static session planning, Rinex export & processing.</p></div></div>
-      <div class="col-md-4"><div class="card p-3"><h5>Drone / UAV</h5><p>Mapping workflows, RTK/PPK setups, ground control, flight planning.</p></div></div>
-      <div class="col-md-4"><div class="card p-3"><h5>GPR / EML</h5><p>Ground Penetrating Radar & Electromagnetic Locating support.</p></div></div>
-      <div class="col-md-4"><div class="card p-3"><h5>SLAM / Laser Scanner</h5><p>Indoor/outdoor SLAM mapping, registration workflows.</p></div></div>
-      <div class="col-md-4"><div class="card p-3"><h5>Echo Sounder / Hydrography</h5><p>Single-beam setups, tidal corrections, bathymetric processing.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- BRANDS -->
-<section id="brands" class="section bg-light">
-  <div class="container text-center">
-    <h2 class="text-danger fw-bold mb-4">Brands We Carry</h2>
-    <div class="brands d-flex flex-wrap justify-content-center">
-      <img src="/logos/nikon.png" alt="Nikon">
-      <img src="/logos/topcon.png" alt="Topcon">
-      <img src="/logos/sinognss.png" alt="SinoGNSS">
-      <img src="/logos/dji.png" alt="DJI">
-      <img src="/logos/fstar.png" alt="Fstar">
-      <img src="/logos/greenvalley.png" alt="GreenValley">
-      <img src="/logos/impulseradar.png" alt="ImpulseRadar">
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container text-center">
-    <h2 class="text-danger fw-bold mb-3">Contact</h2>
-    <p class="mb-4">Reach us directly on WhatsApp or by phone.</p>
-    <a href="https://wa.me/60166966810" target="_blank" class="wa-btn mb-3"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
-    <div class="fw-bold">Phone: 016-696-6810</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p>© 2025 Geospace Instrument Services. All rights reserved.</p>
-    <div class="social">
-      <a href="https://www.facebook.com/profile.php?id=61574711251197" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-    </div>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container text-center">
+        <h2 class="text-danger fw-bold mb-3">Contact</h2>
+        <p class="mb-4">Reach us directly on WhatsApp or by phone.</p>
+        <a href="https://wa.me/60166966810" target="_blank" class="wa-btn mb-3">
+          <i class="bi bi-whatsapp"></i> WhatsApp Us </a>
+        <div class="fw-bold">Phone: 016-696-6810</div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <p>© 2025 Geospace Instrument Services. All rights reserved.</p>
+        <div class="social">
+          <a href="https://www.facebook.com/profile.php?id=61574711251197" target="_blank" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
